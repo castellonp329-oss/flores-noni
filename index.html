@@ -229,6 +229,11 @@ button:hover {
 
 <body>
 
+<!-- Canción de fondo personalizada -->
+<audio id="musica" loop preload="auto">
+    <source src="cancion.mp3" type="audio/mpeg">
+</audio>
+
 <div class="fondo">
     <div class="sol"></div>
 </div>
@@ -277,35 +282,13 @@ button:hover {
         <h2>🌻 Para Noni ✨🤍</h2>
 
         <p>
-
-            Hoy, 21 de septiembre, es el día de
-            las flores amarillas. 🌻
+            Si pudiera regalarte las estrellas, lo haría sin pensarlo, pero por ahora te dejo estas flores que nunca se van a marchitar, como el cariño que te tengo. 
             <br><br>
-
-            Y aunque podría simplemente regalarte
-            unas flores, quise hacer algo diferente.
+            Espero que al verlas recuerdes siempre lo mucho que vales y lo especial que eres en mi vida. ✨🌸
             <br><br>
-
-            Quise crear este pequeño detalle para ti,
-            porque hay personas que merecen algo
-            hecho especialmente para ellas. ✨
-            <br><br>
-
-            Puede que estas flores estén hechas
-            con código, pero cada parte de esta
-            página fue pensada para sacarte
-            una sonrisa. 💛
-            <br><br>
-
-            Espero que este pequeño detalle te
-            recuerde lo especial que eres.
-            <br><br>
-
             <strong>
-                Feliz día de las flores amarillas,
-                Noni. 🌻✨🤍
+                Feliz día de las flores amarillas, Noni. 🌻✨🤍
             </strong>
-
         </p>
 
         <button class="cerrar" onclick="cerrarCarta()">
@@ -319,6 +302,12 @@ button:hover {
 <script>
 
 function abrirCarta() {
+    // Reproduce la canción al tocar el botón
+    const audio = document.getElementById("musica");
+    if (audio) {
+        audio.play().catch(e => console.log("Audio play error: ", e));
+    }
+
     document.getElementById("carta").style.display = "flex";
 
     for (let i = 0; i < 25; i++) {
@@ -382,4 +371,5 @@ setInterval(crearCorazon, 1800);
 </script>
 
 </body>
-  </html>
+    </html>
+    
